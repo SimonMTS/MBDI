@@ -13,6 +13,13 @@
 		F47CEE3724294722008024A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47CEE3524294722008024A8 /* Main.storyboard */; };
 		F47CEE3924294723008024A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47CEE3824294723008024A8 /* Assets.xcassets */; };
 		F47CEE3C24294723008024A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47CEE3A24294723008024A8 /* LaunchScreen.storyboard */; };
+		F48D837B2429FDDE00C7EC31 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D837A2429FDDE00C7EC31 /* StorageController.swift */; };
+		F48D837E242A091500C7EC31 /* DefaultSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D837D242A091500C7EC31 /* DefaultSegue.swift */; };
+		F4F0030424294DD500886055 /* TitleResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0030324294DD500886055 /* TitleResultController.swift */; };
+		F4F0030624295B9600886055 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0030524295B9600886055 /* Video.swift */; };
+		F4F0030824295C3F00886055 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0030724295C3F00886055 /* API.swift */; };
+		F4F0030D2429625300886055 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0030C2429625300886055 /* CustomSegue.swift */; };
+		F4F0030F2429A23300886055 /* LocationResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0030E2429A23300886055 /* LocationResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		F47CEE3824294723008024A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47CEE3B24294723008024A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47CEE3D24294723008024A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F48D837A2429FDDE00C7EC31 /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		F48D837D242A091500C7EC31 /* DefaultSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSegue.swift; sourceTree = "<group>"; };
+		F4F0030324294DD500886055 /* TitleResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleResultController.swift; sourceTree = "<group>"; };
+		F4F0030524295B9600886055 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		F4F0030724295C3F00886055 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F4F0030C2429625300886055 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
+		F4F0030E2429A23300886055 /* LocationResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,54 @@
 		F47CEE2E24294722008024A8 /* ios3 */ = {
 			isa = PBXGroup;
 			children = (
+				F48D837C242A08F500C7EC31 /* Segues */,
+				F47CEE3324294722008024A8 /* ViewController.swift */,
+				F4F0030B24295D1900886055 /* ViewControllers */,
+				F4F0030A24295D0200886055 /* Controllers */,
+				F4F0030924295CED00886055 /* Models */,
 				F47CEE2F24294722008024A8 /* AppDelegate.swift */,
 				F47CEE3124294722008024A8 /* SceneDelegate.swift */,
-				F47CEE3324294722008024A8 /* ViewController.swift */,
 				F47CEE3524294722008024A8 /* Main.storyboard */,
 				F47CEE3824294723008024A8 /* Assets.xcassets */,
 				F47CEE3A24294723008024A8 /* LaunchScreen.storyboard */,
 				F47CEE3D24294723008024A8 /* Info.plist */,
 			);
 			path = ios3;
+			sourceTree = "<group>";
+		};
+		F48D837C242A08F500C7EC31 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0030C2429625300886055 /* CustomSegue.swift */,
+				F48D837D242A091500C7EC31 /* DefaultSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		F4F0030924295CED00886055 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0030524295B9600886055 /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4F0030A24295D0200886055 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0030724295C3F00886055 /* API.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F4F0030B24295D1900886055 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0030324294DD500886055 /* TitleResultController.swift */,
+				F4F0030E2429A23300886055 /* LocationResultController.swift */,
+				F48D837A2429FDDE00C7EC31 /* StorageController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +194,13 @@
 				F47CEE3424294722008024A8 /* ViewController.swift in Sources */,
 				F47CEE3024294722008024A8 /* AppDelegate.swift in Sources */,
 				F47CEE3224294722008024A8 /* SceneDelegate.swift in Sources */,
+				F4F0030424294DD500886055 /* TitleResultController.swift in Sources */,
+				F4F0030D2429625300886055 /* CustomSegue.swift in Sources */,
+				F48D837E242A091500C7EC31 /* DefaultSegue.swift in Sources */,
+				F4F0030F2429A23300886055 /* LocationResultController.swift in Sources */,
+				F4F0030824295C3F00886055 /* API.swift in Sources */,
+				F4F0030624295B9600886055 /* Video.swift in Sources */,
+				F48D837B2429FDDE00C7EC31 /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R5798GNZM;
 				INFOPLIST_FILE = ios3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R5798GNZM;
 				INFOPLIST_FILE = ios3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
