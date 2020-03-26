@@ -45,7 +45,9 @@ class API {
             urlString += "&pageToken=" + NextPageToken;
         }
         
-        let url = URL(string: urlString)!
+        guard let url = URL(string: urlString) else {
+            return
+        }
 
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             if  error != nil ||
