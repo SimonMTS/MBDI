@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 import MapKit
 
-
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak public var textField: UITextField!

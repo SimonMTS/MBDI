@@ -33,11 +33,10 @@ class StorageController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func Save(sender: AnyObject) {
-        print("asdasd")
         
         UserDefaults.standard.set(textField.text, forKey: "API_KEY")
         dismiss(animated: true, completion: nil)
-        //_ = navigationController?.popViewController(animated: true)
+        
     }
     
 }

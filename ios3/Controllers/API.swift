@@ -18,8 +18,7 @@ class API {
     static func GetVideosByTitle(text: String, completion: @escaping (_ result: [Video]) -> Void) {
         
         let urlString = "https://www.googleapis.com/youtube/v3/search/?part=snippet&q=" +
-        text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! +
-            "&type=video&maxResults=30&key=" + (UserDefaults.standard.string(forKey: "API_KEY") ?? "")
+            text.htmlEncoded + "&type=video&maxResults=30&key=" + (UserDefaults.standard.string(forKey: "API_KEY") ?? "")
         
         self.Call(urlStringLet: urlString, completion: completion)
         
@@ -61,15 +60,19 @@ class API {
                     return
                 }
                 
+                
                 guard let nextPageTokenResponse = jsonArray["nextPageToken"] as? String else {
                     return
                 }
                 if NextPageToken == nextPageTokenResponse {
                     return
                 }
-                NextPageToken = jsonArray["nextPageToken"] as! String
+                NextPageToken = nextPageTokenResponse
                 
-                let jsonVideos = jsonArray["items"] as! NSArray
+                
+                guard let jsonVideos = jsonArray["items"] as? NSArray else {
+                    return
+                }
                 
                 var resultArray: [Video] = []
                 for jsonVideo in jsonVideos {
@@ -84,7 +87,14 @@ class API {
                         return
                     }
                     
-                    resultArray += [Video(title: jsonVideoInfoSnippet["title"] as! String, link: jsonVideoInfoID["videoId"] as! String)]
+                    guard let videoTitle = jsonVideoInfoSnippet["title"] as? String else {
+                        return
+                    }
+                    guard let videoLink = jsonVideoInfoID["videoId"] as? String else {
+                        return
+                    }
+                    
+                    resultArray += [Video(title: videoTitle, link: videoLink)]
                     
                 }
                 
@@ -101,4 +111,10 @@ class API {
 
 extension LosslessStringConvertible {
     var string: String { .init(self) }
+}
+
+extension String {
+    var htmlEncoded: String {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+    }
 }
